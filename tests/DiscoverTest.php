@@ -255,4 +255,18 @@ class DiscoverTest extends TestCase
 
         static::assertInstanceOf(Collection::class, Discover::in('Events')->getIterator());
     }
+
+    public function test_forwards_property_access_to_collection(): void
+    {
+        $this->mockAllFiles();
+
+        static::assertInstanceOf(Collection::class, Discover::in('Events')->map->name);
+    }
+
+    public function test_forwards_call_to_collection(): void
+    {
+        $this->mockAllFiles();
+
+        static::assertInstanceOf(Collection::class, Discover::in('Events')->map(fn($c) => $c->name));
+    }
 }

@@ -282,7 +282,15 @@ class Discoverer implements IteratorAggregate
     }
 
     /**
-     * Handle dynamic calls to the retrieved classes.
+     * Handle dynamic property access to the retrieved classes Collection.
+     */
+    public function __get(string $name): mixed
+    {
+        return $this->classes()->{$name};
+    }
+
+    /**
+     * Handle dynamic calls to the retrieved classes Collection.
      */
     public function __call(string $name, array $arguments): mixed
     {
