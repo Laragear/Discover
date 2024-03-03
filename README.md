@@ -49,7 +49,7 @@ $classes = Discover::withMethod('handle')->in('Scoreboards')->allClasses();
 
 The Discover class will automatically resolve your project path, and use your application path (`app`) and namespace (`App`) as the base to find the matching classes.
 
-> **Warning**
+> [!IMPORTANT]
 >
 > The discovered classes must be [PSR-4 autoloaded](https://getcomposer.org/doc/04-schema.md#psr-4).
 
