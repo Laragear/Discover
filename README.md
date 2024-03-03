@@ -24,7 +24,7 @@ Your support allows me to keep this package free, up-to-date and maintainable. A
 
 ## Requisites
 
-* PHP 8.2 or later
+* PHP 8.1 or later
 * Laravel 10 or later (optional)
 
 # Installation
