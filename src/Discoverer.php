@@ -204,7 +204,6 @@ class Discoverer implements IteratorAggregate
             // Preemptively pass this class. Now it's left for the filters to keep allowing it.
             $passes = true;
 
-            // @phpstan-ignore-next-line
             foreach ($this->filters as $callback) {
                 // If the callback returns false, then didn't pass.
                 if (!$passes = $callback($reflection)) {
@@ -212,7 +211,6 @@ class Discoverer implements IteratorAggregate
                 }
             }
 
-            // @phpstan-ignore-next-line
             if ($passes) {
                 $classes->put($reflection->name, $reflection);
             }
