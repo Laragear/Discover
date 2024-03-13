@@ -7,6 +7,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
+
 use function lcfirst;
 
 class DiscoverServiceProvider extends ServiceProvider
