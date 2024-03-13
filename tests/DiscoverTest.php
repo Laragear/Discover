@@ -17,7 +17,9 @@ use Orchestra\Testbench\TestCase;
 use ReflectionClass;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
+
 use function tap;
+
 use const DIRECTORY_SEPARATOR as DS;
 
 class DiscoverTest extends TestCase
@@ -54,7 +56,7 @@ class DiscoverTest extends TestCase
                 $this->file($this->app->path('Events/Bar/Baz/Cougar.php')),
             ]));
 
-            if (!$recursive) {
+            if (! $recursive) {
                 $mock->expects('depth')->with(0);
             } else {
                 $mock->expects('depth')->never();
@@ -267,6 +269,6 @@ class DiscoverTest extends TestCase
     {
         $this->mockAllFiles();
 
-        static::assertInstanceOf(Collection::class, Discover::in('Events')->map(fn($c) => $c->name));
+        static::assertInstanceOf(Collection::class, Discover::in('Events')->map(fn ($c) => $c->name));
     }
 }

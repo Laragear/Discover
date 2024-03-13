@@ -10,6 +10,7 @@ use ReflectionException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Traversable;
+
 use function array_intersect;
 use function class_uses_recursive;
 use function get_class_methods;
@@ -17,6 +18,7 @@ use function get_class_vars;
 use function in_array;
 use function trim;
 use function ucfirst;
+
 use const DIRECTORY_SEPARATOR;
 
 /**
@@ -78,7 +80,7 @@ class Discoverer implements IteratorAggregate
     {
         $this->path = trim($path, DIRECTORY_SEPARATOR);
 
-        if (!$namespace) {
+        if (! $namespace) {
             $namespace = Str::of($path)->trim(DIRECTORY_SEPARATOR)->ucfirst()->replace(DIRECTORY_SEPARATOR, '\\');
         }
 
@@ -131,7 +133,7 @@ class Discoverer implements IteratorAggregate
     public function withMethod(string ...$methods): static
     {
         $this->filters['methods'] = function (ReflectionClass $class) use ($methods): bool {
-            return !empty(array_intersect(get_class_methods($class->getName()), $methods));
+            return ! empty(array_intersect(get_class_methods($class->getName()), $methods));
         };
 
         return $this;
@@ -143,7 +145,7 @@ class Discoverer implements IteratorAggregate
     public function withProperty(string ...$properties): static
     {
         $this->filters['properties'] = static function (ReflectionClass $class) use ($properties): bool {
-            return !empty(array_intersect(array_keys(get_class_vars($class->getName())), $properties));
+            return ! empty(array_intersect(array_keys(get_class_vars($class->getName())), $properties));
         };
 
         return $this;
@@ -155,7 +157,7 @@ class Discoverer implements IteratorAggregate
     public function withTrait(string ...$traits): static
     {
         $this->filters['traits'] = static function (ReflectionClass $class) use ($traits): bool {
-            return !empty(array_intersect($traits, class_uses_recursive($class->getName())));
+            return ! empty(array_intersect($traits, class_uses_recursive($class->getName())));
         };
 
         return $this;
@@ -197,7 +199,7 @@ class Discoverer implements IteratorAggregate
             }
 
             // If the class cannot be instantiated (like abstract, traits or interfaces), continue.
-            if (!$reflection->isInstantiable()) {
+            if (! $reflection->isInstantiable()) {
                 continue;
             }
 
@@ -206,7 +208,7 @@ class Discoverer implements IteratorAggregate
 
             foreach ($this->filters as $callback) {
                 // If the callback returns false, then didn't pass.
-                if (!$passes = $callback($reflection)) {
+                if (! $passes = $callback($reflection)) {
                     break;
                 }
             }
@@ -234,7 +236,7 @@ class Discoverer implements IteratorAggregate
      */
     protected function files(): Finder
     {
-        if (!$this->recursive) {
+        if (! $this->recursive) {
             $this->finder->depth(0);
         }
 
