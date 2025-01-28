@@ -76,7 +76,7 @@ class Discoverer implements IteratorAggregate
      *
      * @return $this
      */
-    public function at(string $path, string $namespace = null): static
+    public function at(string $path, ?string $namespace = null): static
     {
         $this->path = trim($path, DIRECTORY_SEPARATOR);
 
