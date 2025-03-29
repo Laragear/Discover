@@ -1,8 +1,8 @@
 # Discover
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laragear/discover.svg)](https://packagist.org/packages/laragear/discover)
 [![Latest stable test run](https://github.com/Laragear/Discover/workflows/Tests/badge.svg)](https://github.com/Laragear/Discover/actions)
-[![Codecov coverage](https://codecov.io/gh/Laragear/Discover/branch/1.x/graph/badge.svg?token=LKnve3PkRl)](https://codecov.io/gh/Laragear/Discover)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8428413a7e0fd9feb57f/maintainability)](https://codeclimate.com/github/Laragear/Discover/maintainability)
+[![Codecov coverage](https://codecov.io/gh/Laragear/Discover/graph/badge.svg?token=nGFzMjpHgf)](https://codecov.io/gh/Laragear/Discover)
+[![Maintainability](https://qlty.sh/badges/4e86e80e-b32c-4692-8b1a-3857fbdc01ed/maintainability.svg)](https://qlty.sh/gh/Laragear/projects/Discover)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=Laragear_Discover&metric=alert_status)](https://sonarcloud.io/dashboard?id=Laragear_Discover)
 [![Laravel Octane Compatibility](https://img.shields.io/badge/Laravel%20Octane-Compatible-success?style=flat&logo=laravel)](https://laravel.com/docs/11.x/octane#introduction)
 
@@ -24,8 +24,8 @@ Your support allows me to keep this package free, up-to-date and maintainable. A
 
 ## Requisites
 
-* PHP 8.1 or later
-* Laravel 10 or later (optional)
+* PHP 8.2 or later
+* Laravel 11 or later
 
 # Installation
 
@@ -190,4 +190,4 @@ If you discover any security related issues, please email darkghosthunter@gmail.
 
 This specific package version is licensed under the terms of the [MIT License](LICENSE.md), at time of publishing.
 
-[Laravel](https://laravel.com) is a Trademark of [Taylor Otwell](https://github.com/TaylorOtwell/). Copyright © 2011-2024 Laravel LLC.
+[Laravel](https://laravel.com) is a Trademark of [Taylor Otwell](https://github.com/TaylorOtwell/). Copyright © 2011-2025 Laravel LLC.

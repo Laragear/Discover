@@ -50,19 +50,15 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - 8.1
           - 8.2
           - 8.3
           - 8.4
         laravel-constrain:
-          - 10.*
           - 11.*
+          - 12.*
         dependencies:
           - lowest
           - highest
-        exclude:
-          - laravel-constrain: 11.*
-            php-version: 8.1
     steps:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
