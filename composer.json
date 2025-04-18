@@ -43,6 +43,16 @@
             "Services\\": "tests/Fixtures/Services"
         }
     },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Discover": "Laragear\\Discover\\Facades\\Discover"
+            },
+            "providers": [
+                "Laragear\\Discover\\DiscoverServiceProvider"
+            ]
+        }
+    },
     "scripts": {
         "test": "vendor/bin/phpunit --coverage-clover build/logs/clover.xml",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
