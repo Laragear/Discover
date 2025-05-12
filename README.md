@@ -57,7 +57,7 @@ The Discover class will automatically resolve your project path, and use your ap
 
 Most Laravel projects use the `app` and `App` as the application path and namespace, respectively. The library will use these, or any other set for your application.
 
-To discover classes _elsewhere_, you will need to use the `from()` method to change both. If you don't set the namespace, it will be inferred from the path.
+To discover classes _elsewhere_, you will need to use the `at()` method to change both. If you don't set the namespace, it will be inferred from the path.
 
 ```php
 use Laragear\Discover\Facades\Discover;
@@ -81,7 +81,7 @@ $classes = Discover::in('Scoreboards')->classes();
 
 ### Filters
 
-You may use the included filters to find classes that are instances of another class, or contains a given member or attribute.
+You may use the included filters to find classes that are instances of another class or interfaces, or contains a given method, property or attribute.
 
 ```php
 use Laragear\Discover\Facades\Discover;
@@ -120,7 +120,7 @@ $classes = Discover::in('Scoreboards')
 
 ### Retrieving classes
 
-Once you're done building, you can retrieve the found classes as a Collection using `classes()`.
+Once you're done building your filters, you can retrieve the found classes as a Collection using `classes()`.
 
 ```php
 use Laragear\Discover\Facades\Discover;
@@ -129,7 +129,7 @@ use Laragear\Discover\Facades\Discover;
 $classes = Discover::in('Scoreboards')->classes();
 ```
 
-The Discover class only looks for classes in the namespace set. To make the search recursive, you can use `allClasses()`, or set `recursive()` before the retrieval.
+The Discover class only looks for classes in the namespace set. To make the search recursive, you can use `allClasses()`, or use `recursive()` before the retrieval.
 
 ```php
 use Laragear\Discover\Facades\Discover;
@@ -161,7 +161,7 @@ $classes = Discover::in('Scoreboards')->map->isFinal();
 
 ## Outside Laravel
 
-It's possible to use the Discoverer outside Laravel projects, as it only requires the `illuminate/support` library. You may need to set your project root path manually.
+It's possible to use the Discoverer outside Laravel projects, as it only requires the `illuminate/support` library. You may need to set your project root path manually when instancing the `Laragear\Discover\Discoverer` class.
 
 ```php
 use Laragear\Discover\Discoverer;
