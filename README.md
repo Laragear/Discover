@@ -24,8 +24,8 @@ Your support allows me to keep this package free, up-to-date and maintainable. A
 
 ## Requisites
 
-* PHP 8.2 or later
-* Laravel 11 or later
+* PHP 8.3 or later
+* Laravel 12 or later
 
 # Installation
 
@@ -37,7 +37,7 @@ composer require laragear/discover
 
 ## Usage
 
-The `Discover` finds classes under a given project path. It contains fluent methods to filter the classes to discover, like method and property names, interfaces, traits, and attributes.
+The `Discover` finds classes under a given project path. It contains fluent methods to filter the classes to discover, like method and property names, interfaces, traits and attributes.
 
 Let's make a simple example: list all classes that include the method `handle()`, inside the `App\Scoreboards` or deeper.
 
